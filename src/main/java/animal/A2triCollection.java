@@ -21,7 +21,6 @@ public class A2triCollection {
 		tree.add(new Chien("Thierry", 24));
 
 		Iterator<Chien> it = tree.iterator();
-
 		while (it.hasNext()) {
 			System.out.println(it.next());
 		}
