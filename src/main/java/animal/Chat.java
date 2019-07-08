@@ -6,4 +6,9 @@ public class Chat extends NamedAnimal {
 		super("Chat", name);
 	}
 
+	@Override
+	void monMaitreMeLave() {
+		// TODO Auto-generated method stub
+
+	}
 }

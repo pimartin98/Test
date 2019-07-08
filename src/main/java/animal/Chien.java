@@ -13,4 +13,9 @@ public class Chien extends NamedAnimal {
 		return age;
 	}
 
+	@Override
+	void monMaitreMeLave() {
+		System.out.println("chez le toiletteur");
+	}
+
 }

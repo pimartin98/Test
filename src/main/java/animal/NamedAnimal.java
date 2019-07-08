@@ -58,6 +58,8 @@ public abstract class NamedAnimal implements Animal, Comparable<NamedAnimal> {
 		return true;
 	}
 
+	abstract void monMaitreMeLave();
+
 	@Override
 	public String toString() {
 		return type + '[' + name + ']';

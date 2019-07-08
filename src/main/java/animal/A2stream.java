@@ -8,6 +8,9 @@ public class A2stream {
 
 	public static void main(String[] args) {
 
+		int p = 10, b = 20;
+		int max = (p < b) ? ((b < 20) ? b * 2 : ((b > 20) ? b % 3 : b / 4)) : ((p == 10) ? p / 2 : p % 3);
+
 		List<Animal> list = new ArrayList<>();
 		list.add(new Chien("medor", 3));
 		list.add(new Chien("riri", 2));
@@ -45,5 +48,7 @@ public class A2stream {
 				.filter(c -> c.getAge() >= 2) //
 				.sorted() //
 				.forEach(System.out::println);
+
+		System.out.println(max);
 	}
 }
