@@ -19,6 +19,7 @@ public class A2map {
 
 		for (Chien c : list) {
 			map.put(c.getName(), c);
+			c.getBigType();
 		}
 
 		list.forEach(c -> map.put(c.getName(), c));
