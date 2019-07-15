@@ -4,7 +4,7 @@ public class Capitale extends Ville {
 
 	private String monument;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws NombreHabitantException, NomVilleException {
 
 		// Capitale cap = new Capitale();
 		// System.out.println(cap.decrisToi());
@@ -18,7 +18,8 @@ public class Capitale extends Ville {
 	}
 
 	// Constructeur d'initialisation de capitale
-	public Capitale(String nom, int hab, String pays, String monument) {
+	public Capitale(String nom, int hab, String pays, String monument)
+			throws NombreHabitantException, NomVilleException {
 		super(nom, hab, pays);
 		this.monument = monument;
 	}

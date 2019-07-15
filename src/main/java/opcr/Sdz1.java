@@ -2,15 +2,25 @@ package opcr;
 
 public class Sdz1 {
 
-	public static void main(String[] args) {
-		Ville ville = new Ville();
-		System.out.println(ville.nomVille);
-		ville.nomVille = "la tête à toto ! ! ! !";
-		System.out.println(ville.nomVille);
+	public static void main(String[] args) throws NombreHabitantException, NomVilleException {
 
-		Ville ville2 = new Ville("Marseille", 123456789, "France");
-		ville2.nomPays = "La tête à tutu ! ! ! ! ";
-		System.out.println(ville2.nomPays);
+		Ville v = null;
+
+		try {
+			v = new Ville("Re", 3, "France");
+		}
+
+//Gestion de l'exception sur le nombre d'habitants
+		catch (NombreHabitantException | NomVilleException e) {
+			System.out.println(e.getMessage());
+		}
+
+		finally {
+			if (v == null)
+				v = new Ville();
+		}
+
+		System.out.println(v.toString());
+
 	}
-
 }

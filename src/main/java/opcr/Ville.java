@@ -8,14 +8,17 @@ public class Ville {
 	protected char categorie;
 
 	// Variables publiques qui comptent les instances
+
 	public static int nbreInstances = 0;
 
 	// Variable privée qui comptera aussi les instances
+
 	private static int nbreInstancesBis = 0;
 
 	public Ville() {
 
 		// On incrémente nos variables à chaque appel aux constructeurs
+
 		nbreInstances++;
 		nbreInstancesBis++;
 		System.out.println("Création d'une ville !");
@@ -24,14 +27,21 @@ public class Ville {
 		nbreHabitants = 0;
 	}
 
-	public Ville(String pNom, int pNbre, String pPays) {
-		System.out.println("Création d'une ville avec des paramètres !");
-		nomVille = pNom;
-		nomPays = pPays;
-		nbreHabitants = pNbre;
-		// On incrémente nos variables à chaque appel aux constructeurs
-		nbreInstances++;
-		nbreInstancesBis++;
+	public Ville(String pNom, int pNbre, String pPays) throws NombreHabitantException, NomVilleException {
+		if (pNbre < 0)
+			throw new NombreHabitantException(pNbre);
+
+		if (pNom.length() < 3)
+			throw new NomVilleException("Le nom de a ville fait moins de 3 lettres : " + pNom);
+		else {
+			nbreInstances++;
+			nbreInstancesBis++;
+
+			nomVille = pNom;
+			nomPays = pPays;
+			nbreHabitants = pNbre;
+			this.setCategorie();
+		}
 	}
 
 	// ************* ACCESSEURS *************
@@ -97,6 +107,12 @@ public class Ville {
 
 	public static int getNombreInstancesBis() {
 		return nbreInstancesBis;
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 
 }
