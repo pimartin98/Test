@@ -14,7 +14,7 @@ import java.net.URLEncoder;
 public class Url {
 	public static void main(String[] args) {
 		try {
-			String siteWeb = "https://google.com/";
+			String siteWeb = "https://google.com/search";
 			URL url = new URL(siteWeb);
 			System.out.println("Authority : " + url.getAuthority());
 			System.out.println("Default port : " + url.getDefaultPort());
@@ -25,7 +25,7 @@ public class Url {
 			try {
 				// Nous nous connectons au site en question
 				URLConnection urlConn = url.openConnection();
-				System.out.println(urlConn.getContentType());
+				System.out.println("getContentType() de l'URL de connection " + urlConn.getContentType());
 
 				String content = "", line = null;
 				// Nous récupérons un flux en retour de connexion
